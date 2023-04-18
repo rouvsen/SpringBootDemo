@@ -30,8 +30,11 @@ public class WebSecurityConfig implements WebSecurityConfigurer {
                 .requestMatchers("/api/v*/registration/**")
                 .permitAll()
                 .anyRequest()
-                .authenticated().and()
-                .formLogin();
+                .authenticated()
+                .and()
+                .formLogin()
+                .and().exceptionHandling().disable();//<-
+        //TODO: modify filter in this line, which exceptions will be catch
         return http.build();
     }
 
