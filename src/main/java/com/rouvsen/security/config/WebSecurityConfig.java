@@ -34,7 +34,6 @@ public class WebSecurityConfig implements WebSecurityConfigurer {
                 .and()
                 .formLogin()
                 .and().exceptionHandling().disable();//<-
-        //TODO: modify filter in this line, which exceptions will be catch
         return http.build();
     }
 
